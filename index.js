@@ -1,7 +1,9 @@
 import express from "express";
 import cors from "cors";
+import serverless from "serverless-http";
 
 const app = express();
+const router = express.Router()
 const PORT = 3000;
 
 app.use(express.urlencoded({ extended: false }));
@@ -10,11 +12,11 @@ app.use(cors({ optionsSuccessStatus: 200 }));
 
 app.use(express.static("public"));
 
-app.get("/", (request, response) => {
+router.get("/", (request, response) => {
     response.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/api/:timestamp?", (request, response) => {
+router.get("/api/:timestamp?", (request, response) => {
     const { timestamp } = request.params;
     let date;
     if (!timestamp) {
@@ -35,7 +37,12 @@ app.get("/api/:timestamp?", (request, response) => {
         response.json({ unix, utc });
     }
 });
+app.use('/.netlify/functions/server', router);
+app.use('/', router);
 
-const listener = app.listen(PORT, function () {
-    console.log("Your app is listening on port " + PORT);
-});
+/*const listener = app.listen(process.env.PORT, function () {
+    console.log("Your app is listening on port " + listener.address().port);
+});*/
+
+module.exports = app;
+module.exports.handler = serverless(app);
