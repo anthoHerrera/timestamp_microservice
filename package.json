@@ -1,0 +1,28 @@
+{
+  "name": "timestamp_microservice",
+  "version": "1.0.0",
+  "description": "this is a microservice challenge from freecodecamp",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js --exec babel-node -e js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "node",
+    "express",
+    "microservice"
+  ],
+  "author": "Anthony_Herrera",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
