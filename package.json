@@ -1,31 +1,27 @@
 {
   "name": "timestamp_microservice",
   "version": "1.0.0",
-  "description": "this is a microservice challenge from freecodecamp",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server.js --exec babel-node -e js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "netlify-lambda build src"
+    "start": "nodemon server.js"
   },
-  "keywords": [
-    "backend",
-    "node",
-    "express",
-    "microservice"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthoHerrera/timestamp_microservice.git"
+  },
+  "keywords": [],
   "author": "Anthony_Herrera",
   "license": "MIT",
-  "devDependencies": {
-    "nodemon": "^2.0.12"
+  "bugs": {
+    "url": "https://github.com/anthoHerrera/timestamp_microservice/issues"
   },
+  "homepage": "https://github.com/anthoHerrera/timestamp_microservice#readme",
   "dependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/node": "^7.14.7",
-    "@babel/preset-env": "^7.14.7",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "netlify-lambda": "^2.0.11",
-    "serverless-http": "^2.7.0"
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }
